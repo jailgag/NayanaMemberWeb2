@@ -1,0 +1,33 @@
+#main {
+    width: 1000px;
+    margin: 5% auto;
+        }
+#main h2 {
+    font-size: 1.5em;
+    line-height: 2.5;
+        }
+
+#main img {
+        float: left;
+        margin-right: 50px;
+            }
+
+#main p {
+        line-height: 2.0;
+            }
+
+#main h3 {
+        font-size: 1.2em;
+        line-height: 2.2;
+            }
+
+#main .schedule li {
+        list-style: none;
+        line-height: 1.5;
+            }
+#healing, #activity {
+        margin-top: 60px;
+            }
+#healing div {
+        margin-top: 20px;
+            }

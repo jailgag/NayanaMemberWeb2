@@ -1,0 +1,27 @@
+#footer {
+    width: 1200px;
+    height: 100px;
+    border-top: 2px solid #222;
+}
+/* bottomMenu flex 사용 */
+#bottomMenu ul {
+    list-style: none;
+    display: flex;
+}
+#bottomMenu li {
+    padding: 5px 25px;
+    border-right: 1px solid #ddd;
+}
+/* bottomMenu float:left 사용 */
+/* #bottomMenu li {
+    list-style: none;
+    float: left;
+}
+#bottomMenu li {
+    padding: 5px 25px;
+    border-right: 1px solid #ddd;
+} */
+#bottomMenu a, #bottomMenu a:visited {
+    font-size: 15px;
+    color: #666;
+}
