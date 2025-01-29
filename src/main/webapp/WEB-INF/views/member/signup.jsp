@@ -70,6 +70,8 @@
 							<label>취미</label>
 							<input type="text" name="hobby">
 						</div>
+						<!-- 폼태그 버튼을 누르면?submit버튼이 눌린다!
+						눌리면 위에 class="signup-form" action"/member/signup"url로 post로 요청 -->
 						<button type="submit" class="signup-button">가입하기</button>
 					</form>
 				</div>

@@ -19,6 +19,7 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
+	//JDTBTemplate객체가 싱글톤패턴적용해서 사용!
 	public static JDBCTemplate getInstance() { //3.
 		if (instance == null) {
 			instance = new JDBCTemplate();
@@ -26,6 +27,7 @@ public class JDBCTemplate {
 		}
 		return instance;
 	}
+	//getConnection이라는 메소드를 통해서 연결을 만들어줌!!
 	public Connection getConnection() throws SQLException { //5.
 		Connection conn = DriverManager.getConnection(URL,USERNAEM,PASSWORD);
 		return conn;

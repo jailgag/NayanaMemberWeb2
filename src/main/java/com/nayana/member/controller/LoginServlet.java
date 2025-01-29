@@ -39,6 +39,11 @@ public class LoginServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * login.jsp에서 post로 해서 여기로 dopost가 동작이 되는데
+	 *  http://local~~:8888 (여긴7777로!!)/member/login url로 동작이됨!
+	 *  post방식이라 쿼리스트링이 안보임!! 
+	 *  아래 String memberId = request.getParameter("memberId");에서
+	 *  ("memberId")부분이 login.jsp에 아이디 input태그에 ***name부분과 똑같아야한다!!******
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -49,6 +54,7 @@ public class LoginServlet extends HttpServlet {
 		String memberId = request.getParameter("memberId");
 		String memberPw =request.getParameter("memberPw");
 		Member member = new Member(memberId,memberPw);
+		//selectOneByLogin부분에 컨트롤누르고 클릭하면 이동!!
 		member = mService.selectOneByLogin(member);
 		if(member != null) {
 			//아래코드 누락되어 로그인버튼 없어지지 않았다?

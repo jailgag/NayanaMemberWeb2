@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,22 +9,24 @@
 		<link rel="stylesheet" href="../resources/css/reset.css">
         <link rel="stylesheet" href="../resources/css/header.css">
         <link rel="stylesheet" href="../resources/css/footer.css">
-        
+        <link rel="stylesheet" href="../resources/css/mypage.css">
 </head>
 <body>
 	
 	<div id="container">
-	
+		<!-- jsp:include ->jsp: include 띄어쓰기하면 에러남주의!! -->
 		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 		<main>
+			<div class="mypage-container">
 		<div class="sidebar">
-		<div>
+		<div class="profile-section">
 		 <div class="profile-image"></div>
-		 <h3 class="profile-name">일용자님</h3>
+		 <h3 class="profile-name">${requestScope.member.memberName }님</h3>
 		 <p class="profile-info">여행의 발견</p>
+		 <p class="enroll-date">${requestScope.member.enrollDate }</p>
 		</div>
 		<ul class="menu-list">
-			<li><a href="#">기본정보</a></li>
+			<li><a href="#" class="active">기본정보</a></li>
 			<li><a href="#">예약내역</a></li>
 			<li><a href="#">관심상품</a></li>
 			<li><a href="#">후기관리</a></li>
@@ -35,23 +38,23 @@
 			<form action"" method"">
 				<div class="info-group">
 					<label>아이디</label>
-					<input type="text" readonly>
+					<input type="text" value="${requestScope.member.memberId }" name="memberId" readonly>
 				</div>
 				
 				<div class="info-group">
 					<label>이름</label>
-					<input type="text" readonly>
+					<input type="text" value="${requestScope.member.memberName }" readonly>
 				</div>
 				
 				<div class="info-group">
 					<label>성별</label>
 					<div class="radio-group">
 					<label>
-					<input type="radio" disabled>
+					<input type="radio" disabled <c:if test="${requestScope.member.gender == 'M' }">checked</c:if>>
 					남
 					</label>
 					<label>
-					<input type="radio" disabled>
+					<input type="radio" disabled <c:if test="${requestScope.member.gender eq 'F' }">checked</c:if>>
 					여
 					</label>
 					</div>
@@ -59,34 +62,35 @@
 					
 					<div class="info-group">
 					<label>나이</label>
-					<input type="number" readonly>
+					<input type="number" value="${requestScope.member.age }" readonly>
 					<!-- readonly역할 수정할수없게하는것? -->
 					
 				</div>
 				
 				<div class="info-group">
 					<label>이메일</label>
-					<input type="email" >
+					<input type="email" value="${requestScope.member.email }" name="email" >
 				</div>
 				
 				<div class="info-group">
 					<label>전화번호</label>
-					<input type="tel" >
+					<input type="tel"value="${requestScope.member.phone }" name="phone" >
 				</div>
 				
 				<div class="info-group">
 					<label>주소</label>
-					<input type="text" >
+					<input type="text"  value="${requestScope.member.address }" name="address" >
 				</div>
 				
 				<div class="info-group">
 					<label>취미</label>
-					<input type="text" >
+					<input type="text" value="${requestScope.member.hobby }" name="hobby" >
 				</div>
 				
 				<button type="submit" class="save-button">저장하기</button>
 				
 			</form>
+		</div>
 		</div>
 		</main>
 		<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>

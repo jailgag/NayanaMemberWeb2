@@ -27,6 +27,10 @@ public class SignupServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * *****jsp?에서 a태그에 있는걸 누르면 get으로 요청함!!!*****그래서
+	 * doGet이 동작함!!!
+	 * 다시 signup.jsp에서  <form class="signup-form" action="/member/signup" method="post">
+	 * post로 요청했기때문에 doget 아래 doPost가 동작하게됨!!
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -36,6 +40,10 @@ public class SignupServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 아래String memberId = request.getParameter("memberId");
+	 * ("memberId");()갈호안에는 signup.jsp에!!<input type="text" name="memberId" required>
+	 * *****input태그안에 name="memberId" name에 있는"memberId" <--이거랑 같아야한다!!!
+	 * 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

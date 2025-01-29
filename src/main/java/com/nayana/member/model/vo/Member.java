@@ -17,7 +17,25 @@ public class Member {
 	public Member() {}
 	
 	
-	//2.signup 9개짜리 만듬!!
+	//mypage에 rsetTomember 생성자 10개!!
+	public Member(String memberId, String memberPwd, String memberName, String gender, int age, String email,
+			String phone, String address, String hobby, Date enrollDate) {
+		super();
+		this.memberId = memberId;
+		this.memberPwd = memberPwd;
+		this.memberName = memberName;
+		this.gender = gender;
+		this.age = age;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
+		this.hobby = hobby;
+		this.enrollDate = enrollDate;
+	}
+
+
+
+	//2.signup 9개짜리 만듬!!(매개변수가 있는 생성자!)
 	public Member(String memberId, String memberPwd, String memberName, String gender, int age, String email,
 			String phone, String address, String hobby) {
 		super();

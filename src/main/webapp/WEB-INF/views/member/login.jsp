@@ -22,6 +22,8 @@
                         <h2>로그인</h2>
                         <p>제주의 꿈과 함께하는 여행</p>
                     </div>
+                    <!-- 아래 form태그에서 action 멤버로그인에/(member/login) 에 post로 요청 
+                    id와 password를 들고!!-->
                     <form class="login-form" action="/member/login" method="post">
                         <div class="form-group">
                             <label for="">아이디</label>
@@ -37,7 +39,8 @@
                     <div class="login-links">
                         <a href="#">아이디 찾기</a>
                         <a href="#">비밀번호 찾기</a>
-                        <a href="#">회원가입</a>
+                        <a href="/member/signup">회원가입</a>
+                        <!-- 위에 href="#"에서 /member/signup수정!! -->
                     </div>
                 </div>
             </main>
