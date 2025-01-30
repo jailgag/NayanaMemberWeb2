@@ -17,6 +17,20 @@ public class Member {
 	public Member() {}
 	
 	
+	
+	//updateServlet에서 만듬!5개!
+	public Member(String memberId, String email, String phone, String address, String hobby) {
+		super();
+		this.memberId = memberId;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
+		this.hobby = hobby;
+	}
+
+
+
+
 	//mypage에 rsetTomember 생성자 10개!!
 	public Member(String memberId, String memberPwd, String memberName, String gender, int age, String email,
 			String phone, String address, String hobby, Date enrollDate) {

@@ -92,6 +92,25 @@ public class MemberDAO {
 		pstmt.close();
 		return member;
 	}
+	//memberService에서 넘어왔고 online으로 올려줌!
+	//Update!!!
+	public int updateMember(Connection conn, Member member) throws SQLException {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		int result = 0;
+		//java.sql.SQLSyntaxErrorException: ORA-00971: SET 키워드가 없습니다 *SET_언더바오입력!
+		//String query ="UPDATE MEMBER_TBL_SET EMAIL =? , PHONE=? , ADDRESS=?, HOBBY=? WHERE MEMBER_ID= ?";
+		String query ="UPDATE MEMBER_TBL SET EMAIL =? , PHONE=? , ADDRESS=?, HOBBY=? WHERE MEMBER_ID= ? ";
+		pstmt = conn.prepareStatement(query); 
+		pstmt.setString(1, member.getEmail());
+		pstmt.setString(2, member.getPhone());
+		pstmt.setString(3, member.getAddress());
+		pstmt.setString(4, member.getHobby());
+		pstmt.setString(5, member.getMemberId());
+		result = pstmt.executeUpdate();//DML이니깐!!(이거 헷갈려서 sql복습할때 정리할것!)
+		pstmt.close();
+		return result;
+	}
 	//rsetTomember만들기!!
 	private Member rsetToMember(ResultSet rset) throws SQLException {
 		// TODO Auto-generated method stub

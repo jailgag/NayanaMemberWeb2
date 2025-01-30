@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!-- taglib uri=적고 3번째꺼 선택후 prefix=c적어줌! -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +36,7 @@
 		</div>
 		<div class="content-area">
 			<h2 class="content_title">기본정보</h2>
-			<form action"" method"">
+			<form action="/member/update" method="post">
 				<div class="info-group">
 					<label>아이디</label>
 					<input type="text" value="${requestScope.member.memberId }" name="memberId" readonly>
@@ -48,13 +49,16 @@
 				
 				<div class="info-group">
 					<label>성별</label>
-					<div class="radio-group">
+				<div class="radio-group">
+				<!-- eq 랑 == 이랑 같다?? 주석 에러나서 설명하는 cif 하는거 지움
+				테스트 오케이! 남녀가 바꿔가면서 마이페이지에 체크되는거확인!
+				test= 여기서 =은 붙여써야함 에러남-->
 					<label>
-					<input type="radio" disabled <c:if test="${requestScope.member.gender == 'M' }">checked</c:if>>
+					<input type="radio" disabled <c:if test="${requestScope.member.gender == 'M' }">checked</c:if>> 
 					남
 					</label>
 					<label>
-					<input type="radio" disabled <c:if test="${requestScope.member.gender eq 'F' }">checked</c:if>>
+					<input type="radio" disabled <c:if test="${requestScope.member.gender eq 'F' }">checked</c:if>> 
 					여
 					</label>
 					</div>

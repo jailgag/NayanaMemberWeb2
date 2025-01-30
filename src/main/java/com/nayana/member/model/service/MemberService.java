@@ -91,6 +91,30 @@ public class MemberService {
 		}
 		return member; //
 	}
+	//updateServlet에서 넘어옴!
+	public int updateMember(Member member) {
+		// TODO Auto-generated method stub
+	//insertMember랑 거의똑같다!!
+		int result = 0;
+		Connection conn = null;
+		
+		try {
+			conn = jdbcTemplate.getConnection();
+			result = mDao.updateMember(conn, member);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
 	
 
 }

@@ -43,7 +43,7 @@ public class MypageServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member sMember = (Member)session.getAttribute("member"); //임포트확인할것
 		String memberId = sMember.getMemberId();
-		Member member = mService.selectOneByid(memberId);
+		Member member = mService.selectOneByid(memberId); //id소문자로 되어있음!!확인!!
 		if(member != null) {
 			//데이터가 존재하면 마이페이지.jsp로 보냄
 			request.setAttribute("member", member);
