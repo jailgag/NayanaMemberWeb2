@@ -93,6 +93,11 @@
 				
 				<button type="submit" class="save-button">저장하기</button>
 				
+				<!-- div대신span을쓰면 옆으로이동 -->
+				<span class="del-button">
+				<a href="/member/delete">회원탈퇴</a>
+				</span>
+			
 			</form>
 		</div>
 		</div>

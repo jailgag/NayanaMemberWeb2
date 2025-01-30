@@ -22,7 +22,15 @@
 					
 					<!-- form태그 안에 네임값 그리고 action!! method 중요!!
 					input 태그에 name값중요!! 어딘가 내가 실습했던 적었던거 있음!!
-					빠른실습을 위해 강사님 코드 복붙했음... -->
+					빠른실습을 위해 강사님 코드 복붙했음...
+					requered = <--안적으면 안되는것!!
+					회원가입에 아무것도 입력하지않고 가입하기버튼누르면
+					이입력란을 작성하세요라고뜸 
+					signucss에서 
+					.required::after {
+						content: " *";
+						color: #e74c3c;
+						입력해주면 회원가입페이지에 빨간색*표시됨-->
 					
 					<form class="signup-form" action="/member/signup" method="post">
 						<div class="form-group">

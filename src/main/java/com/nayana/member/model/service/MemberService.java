@@ -115,6 +115,28 @@ public class MemberService {
 		
 		return result;
 	}
+	//DeleteServlete에서 넘어옴!!탈퇴!!
+	public int deleteMember(String memberId) {
+		// TODO Auto-generated method stub
+		//위에 updateMember랑 비슷하다!!
+		int result = 0;
+		Connection conn = null;
+		try {
+			conn = jdbcTemplate.getConnection();
+			result = mDao.deleteMember(conn, memberId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 	
 
 }

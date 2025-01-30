@@ -111,6 +111,19 @@ public class MemberDAO {
 		pstmt.close();
 		return result;
 	}
+	//MemberService에서 넘어옴 위로올려줌!!
+	public int deleteMember(Connection conn, String memberId) throws SQLException {
+		// TODO Auto-generated method stu
+		//위에 updateMember랑비슷함!!
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query ="DELETE FROM MEMBER_TBL WHERE MEMBER_ID= ? ";
+		pstmt = conn.prepareStatement(query);
+		pstmt.setString(1, memberId);
+		result = pstmt.executeUpdate();
+		pstmt.close();
+		return result;
+	}
 	//rsetTomember만들기!!
 	private Member rsetToMember(ResultSet rset) throws SQLException {
 		// TODO Auto-generated method stub
