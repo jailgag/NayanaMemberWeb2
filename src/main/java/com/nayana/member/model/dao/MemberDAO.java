@@ -137,10 +137,10 @@ public class MemberDAO {
 		int age = rset.getInt("AGE");
 		String email = rset.getString("EMAIL");
 		String phone = rset.getString("PHONE");
-		String addrress = rset.getString("ADDRESS");
+		String address = rset.getString("ADDRESS");
 		String hobby = rset.getString("HOBBY");
 		Date enrollDate = rset.getDate("ENROLL_DATE");
-		Member member = new Member(memberId, memberPwd, memberName, gender, age, email, phone, addrress, hobby, enrollDate); //생성자만들기!
+		Member member = new Member(memberId, memberPwd, memberName, gender, age, email, phone, address, hobby, enrollDate); //생성자만들기!
 		return member;
 	}
 
